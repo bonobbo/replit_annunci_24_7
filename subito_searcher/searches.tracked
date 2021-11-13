@@ -1,0 +1,495 @@
+{
+    "Auna": {
+        "https://www.subito.it/annunci-italia/vendita/audio-video/?q=auna&ps=30&pe=100": {
+            "https://www.subito.it/audio-video/amplificatore-stereo-600-w-auna-av2-cd508-roma-299898011.htm": {
+                "title": "Amplificatore stereo 600 W Auna AV2 CD508",
+                "price": "70\u00a0\u20ac",
+                "location": "Roma (RM)"
+            },
+            "https://www.subito.it/audio-video/microfono-auna-900-roma-407772562.htm": {
+                "title": "Microfono auna 900",
+                "price": "60\u00a0\u20ac",
+                "location": "Roma (RM)"
+            },
+            "https://www.subito.it/audio-video/auna-concept-620-sorround5-1-pavia-407611477.htm": {
+                "title": "AUNA Concept 620 Sorround5.1",
+                "price": "70\u00a0\u20ac",
+                "location": "Casteggio (PV)"
+            },
+            "https://www.subito.it/audio-video/amplificatore-bluetooth-4-canali-sud-sardegna-391037056.htm": {
+                "title": "Amplificatore Bluetooth 4 canali",
+                "price": "60\u00a0\u20ac",
+                "location": "Iglesias (SU)"
+            },
+            "https://www.subito.it/audio-video/giradischi-portatile-come-nuovo-pistoia-406911748.htm": {
+                "title": "Giradischi portatile come nuovo",
+                "price": "50\u00a0\u20ac",
+                "location": "Quarrata (PT)"
+            },
+            "https://www.subito.it/audio-video/cassa-mp3-auna-boom-2-1-bergamo-406662596.htm": {
+                "title": "Cassa mp3 auna boom 2.1",
+                "price": "30\u00a0\u20ac",
+                "location": "Villa di Serio (BG)"
+            },
+            "https://www.subito.it/audio-video/cassa-audio-trolley-karaoke-bergamo-406662212.htm": {
+                "title": "Cassa audio trolley karaoke",
+                "price": "100\u00a0\u20ac",
+                "location": "Villa di Serio (BG)"
+            },
+            "https://www.subito.it/audio-video/auna-line-300-napoli-398323031.htm": {
+                "title": "Auna line 300",
+                "price": "30\u00a0\u20ac",
+                "location": "Napoli (NA)"
+            },
+            "https://www.subito.it/audio-video/lettore-cd-radio-auna-napoli-398293932.htm": {
+                "title": "Lettore cd & Radio- Auna",
+                "price": "60\u00a0\u20ac",
+                "location": "Napoli (NA)"
+            },
+            "https://www.subito.it/audio-video/auna-connect-120-web-radio-nuova-imballata-verona-406322500.htm": {
+                "title": "Auna connect 120 web radio - NUOVA IMBALLATA",
+                "price": "70\u00a0\u20ac",
+                "location": "Verona (VR)"
+            },
+            "https://www.subito.it/audio-video/amplificatore-perugia-406292592.htm": {
+                "title": "Amplificatore",
+                "price": "45\u00a0\u20ac",
+                "location": "Cerreto di Spoleto (PG)"
+            },
+            "https://www.subito.it/audio-video/giradischi-auna-nostalgy-roma-406271650.htm": {
+                "title": "Giradischi AUNA NOSTALGY",
+                "price": "70\u00a0\u20ac",
+                "location": "Palestrina (RM)"
+            },
+            "https://www.subito.it/audio-video/amplificatore-auna-amp-9200-bari-346060296.htm": {
+                "title": "Amplificatore Auna AMP 9200",
+                "price": "40\u00a0\u20ac",
+                "location": "Bari (BA)"
+            },
+            "https://www.subito.it/audio-video/cassa-speaker-auto-subwoofer-2-vie-auna-200-watt-foggia-372138860.htm": {
+                "title": "Cassa speaker auto subwoofer 2 vie Auna 200 Watt",
+                "price": "95\u00a0\u20ac",
+                "location": "Foggia (FG)"
+            },
+            "https://www.subito.it/audio-video/altoparlanti-auna-loft-30wireless-attive-milano-398676432.htm": {
+                "title": "Altoparlanti Auna Loft 30Wireless attive",
+                "price": "50\u00a0\u20ac",
+                "location": "Lainate (MI)"
+            },
+            "https://www.subito.it/audio-video/sub-auna-600w-siracusa-406100732.htm": {
+                "title": "Sub Auna 600w",
+                "price": "80\u00a0\u20ac",
+                "location": "Priolo Gargallo (SR)"
+            },
+            "https://www.subito.it/audio-video/stereo-multifunzione-auna-palermo-405959578.htm": {
+                "title": "Stereo multifunzione auna",
+                "price": "50\u00a0\u20ac",
+                "location": "Palermo (PA)"
+            },
+            "https://www.subito.it/audio-video/giradischi-portatile-auna-tba-298-roma-405917606.htm": {
+                "title": "Giradischi portatile Auna TBA-298",
+                "price": "50\u00a0\u20ac",
+                "location": "Roma (RM)"
+            },
+            "https://www.subito.it/audio-video/amplificatore-auna-novara-390029503.htm": {
+                "title": "Amplificatore Auna",
+                "price": "40\u00a0\u20ac",
+                "location": "Borgomanero (NO)"
+            },
+            "https://www.subito.it/audio-video/karaoke-bluetooth-portatile-led-show-festa-firenze-405591480.htm": {
+                "title": "Karaoke Bluetooth Portatile LED Show Festa",
+                "price": "35\u00a0\u20ac",
+                "location": "Firenze (FI)"
+            },
+            "https://www.subito.it/audio-video/sistema-home-theater-2-1-auna-brindisi-405531854.htm": {
+                "title": "Sistema Home theater 2.1 Auna",
+                "price": "90\u00a0\u20ac",
+                "location": "Brindisi (BR)"
+            },
+            "https://www.subito.it/audio-video/casse-a-torre-auna-latina-371660980.htm": {
+                "title": "Casse a torre AUNA",
+                "price": "75\u00a0\u20ac",
+                "location": "Terracina (LT)"
+            },
+            "https://www.subito.it/audio-video/cassa-attiva-auna-pro-300w-bari-397347252.htm": {
+                "title": "Cassa attiva Auna pro 300w",
+                "price": "85\u00a0\u20ac",
+                "location": "Molfetta (BA)"
+            },
+            "https://www.subito.it/audio-video/radio-internet-nuova-auna-connect-wifi-bologna-404504453.htm": {
+                "title": "Radio Internet Nuova - AUNA Connect WIFI",
+                "price": "85\u00a0\u20ac",
+                "location": "Bologna (BO)"
+            },
+            "https://www.subito.it/audio-video/radio-melodia-stereo-lettore-cd-lecco-403853016.htm": {
+                "title": "Radio Melodia stereo lettore cd",
+                "price": "65\u00a0\u20ac",
+                "location": "Casatenovo (LC)"
+            },
+            "https://www.subito.it/audio-video/amplificatore-auto-chieti-403751667.htm": {
+                "title": "Amplificatore auto",
+                "price": "45\u00a0\u20ac",
+                "location": "Lanciano (CH)"
+            },
+            "https://www.subito.it/audio-video/subwoofer-amplificato-doppio-20-auna-catania-378820413.htm": {
+                "title": "Subwoofer amplificato doppio 20,Auna",
+                "price": "90\u00a0\u20ac",
+                "location": "Catania (CT)"
+            },
+            "https://www.subito.it/audio-video/microfono-auna-mic-900b-pescara-403653750.htm": {
+                "title": "Microfono Auna Mic 900B",
+                "price": "45\u00a0\u20ac",
+                "location": "Montesilvano (PE)"
+            },
+            "https://www.subito.it/audio-video/karaoke-auna-screenstar-monza-403619704.htm": {
+                "title": "Karaoke Auna Screenstar",
+                "price": "80\u00a0\u20ac",
+                "location": "Monza (MB)"
+            },
+            "https://www.subito.it/audio-video/soundbar-auna-areal-bar-355-belluno-403584724.htm": {
+                "title": "Soundbar AUNA Areal Bar 355",
+                "price": "50\u00a0\u20ac",
+                "location": "Feltre (BL)"
+            },
+            "https://www.subito.it/audio-video/auna-5-1-bluetooth-parma-408156503.htm": {
+                "title": "Auna 5.1 Bluetooth",
+                "price": "60\u00a0\u20ac",
+                "location": "Parma (PR)"
+            },
+            "https://www.subito.it/audio-video/amplificatore-torino-408392491.htm": {
+                "title": "Amplificatore",
+                "price": "100\u00a0\u20ac",
+                "location": "Torino (TO)"
+            },
+            "https://www.subito.it/audio-video/amplificatore-torino-408391838.htm": {
+                "title": "Amplificatore",
+                "price": "80\u00a0\u20ac",
+                "location": "Torino (TO)"
+            },
+            "https://www.subito.it/audio-video/sistema-altoparlanti-auna-525-wh-soundsystem-5-cremona-307720024.htm": {
+                "title": "Sistema altoparlanti AUNA 525 WH Soundsystem 5",
+                "price": "63\u00a0\u20ac",
+                "location": "Casalmaggiore (CR)"
+            },
+            "https://www.subito.it/audio-video/amplificatore-auna-av2-cd508-bt-verona-408514064.htm": {
+                "title": "Amplificatore auna av2-cd508 bt",
+                "price": "70\u00a0\u20ac",
+                "location": "San Bonifacio (VR)"
+            }
+        }
+    },
+    "Herman_Miller": {
+        "https://www.subito.it/annunci-italia/vendita/arredamento-casalinghi/?q=herman+miller&order=priceasc&ps=100&pe=350": {
+            "https://www.subito.it/arredamento-casalinghi/herman-miller-roma-397703744.htm": {
+                "title": "Herman Miller",
+                "price": "150\u00a0\u20ac",
+                "location": "Roma (RM)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/artemide-eclisse-prima-serie-rara-torino-398467865.htm": {
+                "title": "Artemide ECLISSE prima serie rara",
+                "price": "180\u00a0\u20ac",
+                "location": "Pinerolo (TO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/sedia-prodotta-da-herman-miller-anni-60-firenze-374815947.htm": {
+                "title": "Sedia prodotta da Herman Miller anni 60",
+                "price": "200\u00a0\u20ac",
+                "location": "Firenze (FI)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/coppia-di-sedie-panton-roma-404495008.htm": {
+                "title": "Coppia di sedie Panton",
+                "price": "220\u00a0\u20ac",
+                "location": "Roma (RM)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/ea-101-di-charles-ray-eames-prodotta-dalla-icf-s-torino-400574806.htm": {
+                "title": "EA 101 di Charles & Ray Eames prodotta dalla ICF s",
+                "price": "220\u00a0\u20ac",
+                "location": "Rivalta di Torino (TO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/isola-scrivania-hermann-miller-180x160-milano-407347300.htm": {
+                "title": "Isola scrivania Hermann Miller 180x160",
+                "price": "250\u00a0\u20ac",
+                "location": "Basiglio (MI)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/poltrona-ufficio-celle-roma-405692520.htm": {
+                "title": "Poltrona ufficio Celle",
+                "price": "290\u00a0\u20ac",
+                "location": "Roma (RM)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/sedia-ufficio-herman-miller-mirra-2-bergamo-406959965.htm": {
+                "title": "Sedia Ufficio Herman Miller Mirra 2",
+                "price": "350\u00a0\u20ac",
+                "location": "Bergamo (BG)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/sedia-eames-originale-in-vetroresina-torino-398470720.htm": {
+                "title": "Sedia EAMES originale in vetroresina",
+                "price": "350\u00a0\u20ac",
+                "location": "Pinerolo (TO)"
+            }
+        }
+    },
+    "Bimnes_EmiliaRomagna": {
+        "https://www.subito.it/annunci-emilia-romagna/vendita/arredamento-casalinghi/?q=brimnes&order=priceasc&ps=50&pe=150": {
+            "https://www.subito.it/arredamento-casalinghi/cassettiera-bianca-reggio-emilia-401002647.htm": {
+                "title": "Cassettiera bianca",
+                "price": "50\u00a0\u20ac",
+                "location": "Reggio nell'Emilia (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/mobile-brimnes-ikea-modena-400684359.htm": {
+                "title": "Mobile brimnes IKEA",
+                "price": "60\u00a0\u20ac",
+                "location": "Modena (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/mobile-brimnes-rimini-406446892.htm": {
+                "title": "Mobile brimnes",
+                "price": "70\u00a0\u20ac",
+                "location": "Rimini (RN)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-bologna-404309537.htm": {
+                "title": "Letto",
+                "price": "80\u00a0\u20ac",
+                "location": "Bologna (BO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/doppio-mobiletto-con-ante-parma-405923095.htm": {
+                "title": "Doppio mobiletto con ante",
+                "price": "100\u00a0\u20ac",
+                "location": "Parma (PR)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-matrimoniale-modena-408127906.htm": {
+                "title": "Letto matrimoniale",
+                "price": "100\u00a0\u20ac",
+                "location": "Campogalliano (MO)"
+            }
+        }
+    },
+    "Colonnine_ER": {
+        "https://www.subito.it/annunci-emilia-romagna/vendita/arredamento-casalinghi/?q=colonnine&qso=true&order=priceasc&ps=5&pe=50": {
+            "https://www.subito.it/arredamento-casalinghi/colonnine-porta-cd-nero-modena-275610571.htm": {
+                "title": "Colonnine porta cd nero",
+                "price": "20\u00a0\u20ac",
+                "location": "Modena (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/colonnine-rimini-399611624.htm": {
+                "title": "Colonnine",
+                "price": "20\u00a0\u20ac",
+                "location": "Rimini (RN)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/colonnine-porta-cd-grigie-modena-275609572.htm": {
+                "title": "Colonnine porta cd grigie",
+                "price": "25\u00a0\u20ac",
+                "location": "Modena (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/colonnine-porta-cd-bologna-403641741.htm": {
+                "title": "Colonnine porta-cd",
+                "price": "50\u00a0\u20ac",
+                "location": "Bologna (BO)"
+            }
+        }
+    },
+    "Letto_contenitore_RE": {
+        "https://www.subito.it/annunci-emilia-romagna/vendita/arredamento-casalinghi/reggio-emilia/?q=letto+contenitore&ps=30&pe=150": {
+            "https://www.subito.it/arredamento-casalinghi/letto-contenitore-comodini-como-con-specchiera-reggio-emilia-407119207.htm": {
+                "title": "Letto contenitore, comodini. com\u00f2 con specchiera",
+                "price": "30\u00a0\u20ac",
+                "location": "Reggio nell'Emilia (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/contenitore-letto-e-comodini-reggio-emilia-380610301.htm": {
+                "title": "Contenitore letto e comodini",
+                "price": "40\u00a0\u20ac",
+                "location": "Bagnolo in Piano (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-singolo-contenitore-reggio-emilia-407461368.htm": {
+                "title": "Letto singolo contenitore",
+                "price": "100\u00a0\u20ac",
+                "location": "Campegine (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-contenitore-reggio-emilia-407152884.htm": {
+                "title": "Letto contenitore",
+                "price": "100\u00a0\u20ac",
+                "location": "San Martino in Rio (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-contenitore-reggio-emilia-406495537.htm": {
+                "title": "Letto contenitore",
+                "price": "120\u00a0\u20ac",
+                "location": "Scandiano (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-matrimoniale-con-contenitore-reggio-emilia-405859011.htm": {
+                "title": "Letto matrimoniale con contenitore",
+                "price": "120\u00a0\u20ac",
+                "location": "Correggio (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-matrimoniale-con-contenitore-e-materasso-reggio-emilia-406899075.htm": {
+                "title": "Letto matrimoniale con contenitore e materasso",
+                "price": "150\u00a0\u20ac",
+                "location": "Casalgrande (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-in-legno-per-bambino-reggio-emilia-407762080.htm": {
+                "title": "Letto in legno per bambino",
+                "price": "75\u00a0\u20ac",
+                "location": "Reggio nell'Emilia (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/baule-o-cassapanca-vintage-ferro-battuto-e-legno-reggio-emilia-407364848.htm": {
+                "title": "Baule o cassapanca vintage ferro battuto e legno",
+                "price": "90\u00a0\u20ac",
+                "location": "Reggio nell'Emilia (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/divano-letto-beddinge-ikea-matrimoniale-reggio-emilia-407182188.htm": {
+                "title": "Divano letto beddinge Ikea matrimoniale",
+                "price": "150\u00a0\u20ac",
+                "location": "Reggio nell'Emilia (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/divano-3-posti-reggio-emilia-407042821.htm": {
+                "title": "Divano 3 posti",
+                "price": "150\u00a0\u20ac",
+                "location": "Rubiera (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-una-piazza-e-mezzo-reggio-emilia-406735370.htm": {
+                "title": "Letto una piazza e mezzo",
+                "price": "100\u00a0\u20ac",
+                "location": "Montecchio Emilia (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/rete-per-letto-reggio-emilia-404569513.htm": {
+                "title": "Rete per letto",
+                "price": "30\u00a0\u20ac",
+                "location": "Reggio nell'Emilia (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-singolo-reggio-emilia-403602152.htm": {
+                "title": "Letto singolo",
+                "price": "75\u00a0\u20ac",
+                "location": "Reggio nell'Emilia (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/divano-letto-reggio-emilia-403421037.htm": {
+                "title": "Divano Letto",
+                "price": "100\u00a0\u20ac",
+                "location": "Reggio nell'Emilia (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/divano-letto-reggio-emilia-210527868.htm": {
+                "title": "Divano letto",
+                "price": "150\u00a0\u20ac",
+                "location": "Reggio nell'Emilia (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-reggio-emilia-399695440.htm": {
+                "title": "Letto",
+                "price": "120\u00a0\u20ac",
+                "location": "Guastalla (RE)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-in-legno-reggio-emilia-407762080.htm": {
+                "title": "Letto in legno",
+                "price": "60\u00a0\u20ac",
+                "location": "Reggio nell'Emilia (RE)"
+            }
+        }
+    },
+    "Letto_contenitore_MO": {
+        "https://www.subito.it/annunci-emilia-romagna/vendita/arredamento-casalinghi/modena/?q=letto+contenitore&ps=30&pe=150": {
+            "https://www.subito.it/arredamento-casalinghi/letto-matrimoniale-con-contenitore-modena-407968524.htm": {
+                "title": "Letto matrimoniale con contenitore",
+                "price": "100\u00a0\u20ac",
+                "location": "Castelfranco Emilia (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/divano-agolare-3-posti-con-contenitore-modena-407113963.htm": {
+                "title": "Divano agolare 3 posti con contenitore",
+                "price": "80\u00a0\u20ac",
+                "location": "Carpi (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/divano-letto-contenitore-modena-390505493.htm": {
+                "title": "Divano letto contenitore",
+                "price": "50\u00a0\u20ac",
+                "location": "Modena (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-singolo-contenitore-modena-405816364.htm": {
+                "title": "Letto singolo contenitore",
+                "price": "100\u00a0\u20ac",
+                "location": "Mirandola (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/comodino-moderno-modena-354611307.htm": {
+                "title": "Comodino moderno",
+                "price": "35\u00a0\u20ac",
+                "location": "Modena (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-contenitore-modena-401938423.htm": {
+                "title": "Letto contenitore",
+                "price": "150\u00a0\u20ac",
+                "location": "Sassuolo (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/divano-letto-con-penisola-modena-401694967.htm": {
+                "title": "Divano letto con penisola",
+                "price": "120\u00a0\u20ac",
+                "location": "Vignola (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-matrimoniale-contenitore-modena-385538595.htm": {
+                "title": "Letto matrimoniale contenitore",
+                "price": "150\u00a0\u20ac",
+                "location": "Carpi (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-matrimoniale-in-ecopelle-modena-310950580.htm": {
+                "title": "Letto matrimoniale in ecopelle",
+                "price": "50\u00a0\u20ac",
+                "location": "Sassuolo (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/poltrona-letto-modena-393594917.htm": {
+                "title": "Poltrona- letto",
+                "price": "150\u00a0\u20ac",
+                "location": "Nonantola (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-e-contenitore-letto-modena-400103488.htm": {
+                "title": "Letto e contenitore letto",
+                "price": "100\u00a0\u20ac",
+                "location": "Mirandola (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-matrimoniale-reti-dorelan-modena-399509079.htm": {
+                "title": "Letto matrimoniale + reti Dorelan",
+                "price": "150\u00a0\u20ac",
+                "location": "San Prospero (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-singolo-con-rete-modena-406755997.htm": {
+                "title": "Letto singolo con rete",
+                "price": "110\u00a0\u20ac",
+                "location": "Mirandola (MO)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/due-letti-singoli-con-contenitore-modena-402015362.htm": {
+                "title": "Due letti singoli con contenitore",
+                "price": "150\u00a0\u20ac",
+                "location": "Vignola (MO)"
+            }
+        }
+    },
+    "Letto_contenitore_PR": {
+        "https://www.subito.it/annunci-emilia-romagna/vendita/arredamento-casalinghi/parma/?q=letto+contenitore&ps=30&pe=150": {
+            "https://www.subito.it/arredamento-casalinghi/cameretta-colombini-in-produzione-parma-406645527.htm": {
+                "title": "Cameretta COLOMBINI in produzione",
+                "price": "100\u00a0\u20ac",
+                "location": "Parma (PR)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-con-testiera-in-stoffa-e-cassettone-parma-403563286.htm": {
+                "title": "Letto con testiera in stoffa e cassettone",
+                "price": "150\u00a0\u20ac",
+                "location": "Traversetolo (PR)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-contenitore-e-pensili-parma-400765179.htm": {
+                "title": "Letto contenitore e pensili",
+                "price": "80\u00a0\u20ac",
+                "location": "Parma (PR)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/chaise-longue-divano-letto-parma-399901495.htm": {
+                "title": "Chaise-longue divano letto",
+                "price": "150\u00a0\u20ac",
+                "location": "Parma (PR)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-contenitore-singolo-compreso-di-materasso-parma-399742535.htm": {
+                "title": "Letto contenitore singolo compreso di materasso",
+                "price": "100\u00a0\u20ac",
+                "location": "Parma (PR)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/rete-e-struttura-letto-matrimoniale-contenitore-parma-408139392.htm": {
+                "title": "Rete e struttura letto matrimoniale contenitore",
+                "price": "90\u00a0\u20ac",
+                "location": "Fidenza (PR)"
+            },
+            "https://www.subito.it/arredamento-casalinghi/letto-matrimoniale-contenitore-parma-408163377.htm": {
+                "title": "Letto matrimoniale contenitore",
+                "price": "150\u00a0\u20ac",
+                "location": "Parma (PR)"
+            }
+        }
+    }
+}
