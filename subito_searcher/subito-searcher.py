@@ -13,12 +13,13 @@ from openpyxl import load_workbook, Workbook
 
 from replit_keep_alive import replit_keep_alive
 
-# KEEP SCRIPT RUNNING 24/7 WITH REPLIT
-replit_keep_alive.keep_alive()
+#todo list:
+'''
+- add subito categories
+- fix adding existing results
+'''
 
 
-##NAME OF EXCEL DB
-global_excel_db = 'not_ready.xlsx'
 
 
 def load_excel_db():
@@ -44,6 +45,7 @@ def load_excel_db():
             sheet.cell(row=1, column=clr + 1, value=column_names[clr])
         wb.save(filename=global_excel_db)
 
+
 def extract_column_names_and_numbers_to_dict(worksheet):
     col_names_number = {}
     current_val = 1
@@ -51,6 +53,7 @@ def extract_column_names_and_numbers_to_dict(worksheet):
         col_names_number[cnm[0].value] = current_val
         current_val += 1
     return col_names_number
+
 
 def check_and_fill_empty_url_in_excel_db():
     global col_names_number, ws_row_number
@@ -68,8 +71,22 @@ def check_and_fill_empty_url_in_excel_db():
             'PR': '/parma'
         }
         categoria_dic = {
-            'Arredamento': 'arredamento-casalinghi',
-            'Informatica': 'informatica'
+            'Informatica': 'informatica',
+            'Elettronica': 'elettronica',
+            'Audio Video': 'audio-video',
+            'Fotografia': 'fotografia',
+            'Telefonia': 'telefonia',
+            'Per la casa e persona': 'casa-e-persona',
+            'Arredamento e Casalinghi': 'arredamento-casalinghi',
+            'Giardino e Fai da te': 'giardino-fai-da-te',
+            'Abbigliamento e Accessori': 'abbigliamento-accessori',
+            'Sport e Hobby': 'sport-hobby',
+            'Libri e Riviste': 'libri-riviste',
+            'Strumenti Musicali': 'strumenti-musicali',
+            'Biciclette': 'biciclette',
+            '': '',
+            '': '',
+            '': '',
         }
         search_area = ws.cell(row=ws_row_number, column=col_names_number['SearchArea']).value
         ##because provinces need region area and province sub areas in URL
@@ -83,7 +100,6 @@ def check_and_fill_empty_url_in_excel_db():
         category = ws.cell(row=ws_row_number, column=col_names_number['Category']).value
         category = categoria_dic[category]
         keywords = ws.cell(row=ws_row_number, column=col_names_number['Keywords']).value
-        keywords = 'Herman Miller Sedia'
         keywords = '+'.join([x.strip().lower() for x in keywords.split(' ')])
         print()
         min_price = ws.cell(row=ws_row_number, column=col_names_number['MinPrice']).value or None
@@ -95,6 +111,10 @@ def check_and_fill_empty_url_in_excel_db():
         ws.cell(row=ws_row_number, column=col_names_number['URL Search']).value = search_url
         wb.save(filename=global_excel_db)
 
+        #after adding url, searches for query
+        query_name = ws.cell(row=ws_row_number, column=col_names_number['Search Name']).value
+        run_query(url=search_url, name=query_name, notify=True)
+
     # Create a dictionary of column names
     col_names_number = extract_column_names_and_numbers_to_dict(worksheet=ws)
     url_row_number = col_names_number['URL Search']
@@ -103,7 +123,7 @@ def check_and_fill_empty_url_in_excel_db():
         if not ws.cell(row=ws_row_number, column=url_row_number).value:
             fill_search_url_in_excel_db()
 
-# PARSER SET UP
+
 def parser_set_up():
     parser = argparse.ArgumentParser()
     parser.add_argument("--add", dest='name', help="name of new tracking to be added")
@@ -145,8 +165,7 @@ def parser_set_up():
     return args
 
 
-def researches_from_db_2_dict():
-    global ws
+def data_from_db_to_dict(ws):
     db_parent_dict = {}
     col_title_numbers = extract_column_names_and_numbers_to_dict(worksheet=ws)
     for row in range(2, ws.max_row + 1):
@@ -162,49 +181,6 @@ def researches_from_db_2_dict():
     return db_parent_dict
 
 
-load_excel_db()
-wb = load_workbook(filename=global_excel_db)
-ws = wb["Searches"]
-
-check_and_fill_empty_url_in_excel_db()
-
-
-
-db_dict = researches_from_db_2_dict()
-
-args = parser_set_up()
-
-queries = dict()
-queries2 = db_dict
-
-apiCredentials = dict()
-dbFile = "searches.tracked"
-telegramApiFile = "telegram_api_credentials"
-
-
-# #other settings
-# min_price = None
-# max_price = None
-
-# # Windows notifications
-# if platform.system() == "Windows":
-#     from win10toast import ToastNotifier
-#     toaster = ToastNotifier()
-
-# load queries from db file
-# def load_queries():
-#     global queries
-#     global dbFile
-#     if not os.path.isfile(dbFile):
-#         return
-#     # if not os.path.isfile(dbFile):
-#     #     return
-#
-#     with open(dbFile) as file:
-#         queries = json.load(file)
-#         print()
-
-
 def load_api_credentials():
     global apiCredentials
     global telegramApiFile
@@ -215,45 +191,31 @@ def load_api_credentials():
         apiCredentials = json.load(file)
 
 
-# def print_queries():
-#     global queries
-#     # print(queries, "\n\n")
-#     for search in queries.items():
-#         print("\nsearch: ", search[0])
-#         for query_url in search[1]:
-#             print("query url:", query_url)
-#             for url in search[1].items():
-#                 for result in url[1].items():
-#                     print("\n", result[1].get('title'), ":", result[1].get('price'), "-->", result[1].get('location'))
-#                     print(" ", result[0])
-
-
-# # printing a compact list of trackings
-# def print_sitrep():
-#     global queries
-#     i = 1
-#     for search in queries.items():
-#         print('\n{}) search: {}'.format(i, search[0]))
-#         for query_url in search[1]:
-#             print("query url:", query_url)
-#         i += 1
-
-
 def save_results_to_excel_db(name, url, link, title, price, location):
     global wb
     global global_excel_db
     wb.save(global_excel_db)
     ws = wb["Results"]
-    new_row = ws.max_row+1
     col_names_numbers = extract_column_names_and_numbers_to_dict(worksheet=ws)
-    ws.cell(row=new_row, column=col_names_numbers['Search Name']).value = name
-    ws.cell(row=new_row, column=col_names_numbers['Title']).value = title
-    ws.cell(row=new_row, column=col_names_numbers['Price']).value = price
-    ws.cell(row=new_row, column=col_names_numbers['Location']).value = location
-    ws.cell(row=new_row, column=col_names_numbers['Link']).value = link
-    ws.cell(row=new_row, column=col_names_numbers['Search URL']).value = url
-    wb.save(global_excel_db)
+
+    all_results = data_from_db_to_dict(ws)
+    all_results_urls = []
+    for res in all_results.values():
+        all_results_urls.append(res['Link'])
+    is_new_result = False
+    if link not in all_results_urls:
+        new_row = ws.max_row+1
+        ws.cell(row=new_row, column=col_names_numbers['Search Name']).value = name
+        ws.cell(row=new_row, column=col_names_numbers['Title']).value = title
+        ws.cell(row=new_row, column=col_names_numbers['Price']).value = price
+        ws.cell(row=new_row, column=col_names_numbers['Location']).value = location
+        ws.cell(row=new_row, column=col_names_numbers['Link']).value = link
+        ws.cell(row=new_row, column=col_names_numbers['Search URL']).value = url
+        wb.save(global_excel_db)
+        is_new_result = True
+
     ws = wb['Searches']
+    return is_new_result
 
 
 def run_query(url, name, notify):
@@ -282,20 +244,22 @@ def run_query(url, name, notify):
 
         location = product.find('span', re.compile(r'town')).string + product.find('span', re.compile(r'city')).string
 
-        if not queries.get(name):  # insert the new search
-            queries[name] = {url: {link: {'title': title, 'price': price, 'location': location}}}
-            print("\nNew search added:", name)
-            print("Adding result:", title, "-", price, "-", location)
-        else:  # add search results to dictionary
-            if not queries.get(name).get(url).get(link):  # found a new element
-                tmp = "New element found for " + name + ": " + title + " @ " + price + " - " + location + " --> " + link + '\n'
-                msg.append(tmp)
-                queries[name][url][link] = {'title': title, 'price': price, 'location': location}
+        # if not queries.get(name):  # insert the new search
+        #     queries[name] = {url: {link: {'title': title, 'price': price, 'location': location}}}
+        #     print("\nNew search added:", name)
+        #     print("Adding result:", title, "-", price, "-", location)
+        # else:  # add search results to dictionary
+        #     if not queries.get(name).get(url).get(link):  # found a new element
+        #         tmp = "New element found for " + name + ": " + title + " @ " + price + " - " + location + " --> " + link + '\n'
+        #         msg.append(tmp)
+        #         queries[name][url][link] = {'title': title, 'price': price, 'location': location}
 
-        save_results_to_excel_db(name, url, link, title, price, location)
+        is_new_result = save_results_to_excel_db(name, url, link, title, price, location)
+        # tmp = "New element found for " + name + ": " + title + " @ " + price + " - " + location + " --> " + link + '\n'
+        msg.append("New element found for " + name + ": " + title + " @ " + price + " - " + location + " --> " + link + '\n')
 
     if len(msg) > 0:
-        if notify:
+        if notify and is_new_result:
             # # Windows only: send notification
             # if not args.win_notifyoff and platform.system() == "Windows":
             #     global toaster
@@ -310,21 +274,6 @@ def run_query(url, name, notify):
     # print("queries file saved: ", queries)
 
 
-# def refresh(notify):
-#     global queries
-#
-#     try:
-#         for search in queries.items():
-#             for query_url in search[1]:
-#                 run_query(query_url, search[0], notify)
-#     except requests.exceptions.ConnectionError:
-#         print("***Connection error***")
-#     except requests.exceptions.Timeout:
-#         print("***Server timeout error***")
-#     except requests.exceptions.HTTPError:
-#         print("***HTTP error***")
-
-
 def refresh_search(notify=False):
     global db_dict
     try:
@@ -337,18 +286,6 @@ def refresh_search(notify=False):
     except requests.exceptions.HTTPError:
         print("***HTTP error***")
 
-# refresh_search()
-
-# def delete(toDelete):
-#     global queries
-#     queries.pop(toDelete)
-
-
-
-# def save_queries():
-#     with open(dbFile, 'w') as file:
-#         file.write(json.dumps(queries, indent=4))
-
 
 def save_api_credentials():
     with open(telegramApiFile, 'w') as file:
@@ -356,6 +293,7 @@ def save_api_credentials():
 
 
 def is_telegram_active():
+    global args
     return not args.tgoff and "chatid" in apiCredentials and "token" in apiCredentials
 
 
@@ -365,26 +303,36 @@ def send_telegram_messages(messages):
                       apiCredentials["chatid"] + "&text=" + msg
         requests.get(request_url)
 
+# KEEP SCRIPT RUNNING 24/7 WITH REPLIT
+replit_keep_alive.keep_alive()
+
+##NAME OF EXCEL DB
+# global_excel_db = 'not_ready.xlsx'
+global_excel_db = 'subito.xlsx'
+
 
 # MAIN
 if __name__ == '__main__':
 
-    ### Setup commands ###
-    # load_queries()
+    load_excel_db()
+    wb = load_workbook(filename=global_excel_db)
+    ws = wb["Searches"]
+
+    check_and_fill_empty_url_in_excel_db()
+
+    db_dict = data_from_db_to_dict(ws)
+
+    args = parser_set_up()
+
+    # queries = dict()
+    queries = db_dict
+
+    # dbFile = "searches.tracked"
+
+    telegramApiFile = "telegram_api_credentials"
+    apiCredentials = dict()
     load_api_credentials()
 
-
-    # if args.list:
-    #     print("printing current status...")
-    #     print_queries()
-    # if args.short_list:
-    #     print('printing quick sitrep...')
-    #     print_sitrep()
-    # if args.url is not None and args.name is not None:
-    #     run_query(args.url, args.name, False)
-    #     print("Query added.")
-    # if args.delete is not None:
-    #     delete(args.delete)
 
     # Telegram setup
     if args.token is not None and args.chatid is not None:
@@ -392,24 +340,13 @@ if __name__ == '__main__':
         apiCredentials["chatid"] = args.chatid
         save_api_credentials()
 
-    ### Run commands ###
-    # if args.refresh:
-    #     refresh(True)
-
-    # print()
-    # save_queries()
-
-    # first_notify = args.first_notify
+    first_notify = args.first_notify #commentare?
     if args.daemon:
         # notify = args.first_notify
-        # notify = False  # Don't flood with notifications the first time
+        # notify = Fal se  # Don't flood with notifications the first time
         notify = True
 
         while True:
-            # refresh(notify)
             refresh_search(notify)
-            # notify = True
-            # print()
             print(str(args.delay) + " seconds to next poll.")
-            # save_queries()
             time.sleep(int(args.delay))

@@ -18,6 +18,7 @@ def run_query(url, name, notify):
 
     print(soup.prettify())
 
+    testscraper = soup.find_all('span', {'class':'d2edcug0 hpfvmrgz qv66sw1b c1et5uql oi732d6d ik7dh3pa ht8s03o8 a8c37x1j keod5gw0 nxhoafnm aigsh9s9 fe6kdd0r mau55g9w c8b282yb d9wwppkn mdeji52x a5q79mjw g1cxx5fr lrazzd5p oo9gr5id'})
     product_list_items = soup.find_all('div', class_=re.compile(r'item-key-data'))
     msg = []
 
