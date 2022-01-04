@@ -256,10 +256,11 @@ def run_query(url, name, notify):
 
         is_new_result = save_results_to_excel_db(name, url, link, title, price, location)
         # tmp = "New element found for " + name + ": " + title + " @ " + price + " - " + location + " --> " + link + '\n'
-        msg.append("New element found for " + name + ": " + title + " @ " + price + " - " + location + " --> " + link + '\n')
+        if is_new_result:
+            msg.append("New element found for " + name + ": " + title + " @ " + price + " - " + location + " --> " + link + '\n')
 
     if len(msg) > 0:
-        if notify and is_new_result:
+        if notify:
             # # Windows only: send notification
             # if not args.win_notifyoff and platform.system() == "Windows":
             #     global toaster
@@ -270,7 +271,7 @@ def run_query(url, name, notify):
             print('\n{} new elements have been found.'.format(len(msg)))
         # save_queries()
     else:
-        print('\nAll lists are already up to date.')
+        print('All lists are already up to date.\n')
     # print("queries file saved: ", queries)
 
 
@@ -309,7 +310,11 @@ replit_keep_alive.keep_alive()
 ##NAME OF EXCEL DB
 # global_excel_db = 'not_ready.xlsx'
 global_excel_db = 'subito.xlsx'
+args = parser_set_up()
 
+telegramApiFile = "telegram_api_credentials"
+apiCredentials = dict()
+load_api_credentials()
 
 # MAIN
 if __name__ == '__main__':
@@ -322,16 +327,16 @@ if __name__ == '__main__':
 
     db_dict = data_from_db_to_dict(ws)
 
-    args = parser_set_up()
+    # args = parser_set_up()
 
     # queries = dict()
     queries = db_dict
 
     # dbFile = "searches.tracked"
 
-    telegramApiFile = "telegram_api_credentials"
-    apiCredentials = dict()
-    load_api_credentials()
+    # telegramApiFile = "telegram_api_credentials"
+    # apiCredentials = dict()
+    # load_api_credentials()
 
 
     # Telegram setup
