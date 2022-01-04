@@ -11,7 +11,9 @@ import time
 
 from openpyxl import load_workbook, Workbook
 
-from replit_keep_alive import replit_keep_alive
+# from . import replit_keep_alive
+# from replit_keep_alive import replit_keep_alive
+import replit_keep_alive
 
 #todo list:
 '''
