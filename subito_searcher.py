@@ -18,10 +18,46 @@ import replit_keep_alive
 #todo list:
 '''
 - add subito categories
-- fix adding existing results
+
 '''
 
+"""
+-open
+-read results into dict
+-read searches
+-create object
+-create url
+-run url
+-save searches
+"""
 
+
+search_area_dic = {
+    'italia': 'italia',
+    'EM': 'emilia-romagna',
+    'EM vicino': 'emilia-romagna-vicino',
+    'RE': '/reggio-emilia',
+    'MO': '/modena',
+    'PR': '/parma'
+}
+categoria_dic = {
+    'Informatica': 'informatica',
+    'Elettronica': 'elettronica',
+    'Audio Video': 'audio-video',
+    'Fotografia': 'fotografia',
+    'Telefonia': 'telefonia',
+    'Per la casa e persona': 'casa-e-persona',
+    'Arredamento e Casalinghi': 'arredamento-casalinghi',
+    'Giardino e Fai da te': 'giardino-fai-da-te',
+    'Abbigliamento e Accessori': 'abbigliamento-accessori',
+    'Sport e Hobby': 'sport-hobby',
+    'Libri e Riviste': 'libri-riviste',
+    'Strumenti Musicali': 'strumenti-musicali',
+    'Biciclette': 'biciclette',
+    '': '',
+    '': '',
+    '': '',
+}
 
 
 def load_excel_db():
@@ -34,17 +70,17 @@ def load_excel_db():
         sheet = wb.active
         sheet.title = "Searches"
         sheet = wb["Searches"]
-        column_names = 'Active,Search Name,MinPrice,MaxPrice,SearchArea,Category,Keywords,KeywordsEclude,Only in Title,Only Can Post,Website,URL Search'.split(
+        column_names = 'Active,Search Name,MinPrice,MaxPrice,SearchArea,Category,Keywords,KeywordsExclude,Only in Title,Only Can Post,Website,URL Search'.split(
             ',')
         for cl in range(len(column_names)):
             sheet.cell(row=1, column=cl + 1, value=column_names[cl])
-        wb.save(filename=global_excel_db)
+        # wb.save(filename=global_excel_db)
 
-        sheet.create_sheet("Results")
+        wb.create_sheet("Results")
         sheet = wb["Results"]
-        column_names_results = 'Search Name, Title, Price, Location, Link, Search URL'.split(',')
-        for clr in range(len(column_names)):
-            sheet.cell(row=1, column=clr + 1, value=column_names[clr])
+        column_names_results = 'Search Name,Title,Price,Location,Link,Search URL'.split(',')
+        for clr in range(len(column_names_results)):
+            sheet.cell(row=1, column=clr + 1, value=column_names_results[clr])
         wb.save(filename=global_excel_db)
 
 
@@ -57,73 +93,52 @@ def extract_column_names_and_numbers_to_dict(worksheet):
     return col_names_number
 
 
-def check_and_fill_empty_url_in_excel_db():
-    global col_names_number, ws_row_number
-
-    def fill_search_url_in_excel_db():
-        global min_price, max_price
-        # example1='https://www.subito.it/annunci-italia/vendita/arredamento-casalinghi/?q=herman+miller&order=priceasc&ps=100&pe=350'
-        url_root = 'https://www.subito.it/annunci-'
-        search_area_dic = {
-            'italia': 'italia',
-            'EM': 'emilia-romagna',
-            'EM vicino': 'emilia-romagna-vicino',
-            'RE': '/reggio-emilia',
-            'MO': '/modena',
-            'PR': '/parma'
-        }
-        categoria_dic = {
-            'Informatica': 'informatica',
-            'Elettronica': 'elettronica',
-            'Audio Video': 'audio-video',
-            'Fotografia': 'fotografia',
-            'Telefonia': 'telefonia',
-            'Per la casa e persona': 'casa-e-persona',
-            'Arredamento e Casalinghi': 'arredamento-casalinghi',
-            'Giardino e Fai da te': 'giardino-fai-da-te',
-            'Abbigliamento e Accessori': 'abbigliamento-accessori',
-            'Sport e Hobby': 'sport-hobby',
-            'Libri e Riviste': 'libri-riviste',
-            'Strumenti Musicali': 'strumenti-musicali',
-            'Biciclette': 'biciclette',
-            '': '',
-            '': '',
-            '': '',
-        }
-        search_area = ws.cell(row=ws_row_number, column=col_names_number['SearchArea']).value
-        ##because provinces need region area and province sub areas in URL
-        if search_area in ['RE', 'MO', 'PR']:
-            sub_search_area = search_area_dic[search_area]
-            search_area = search_area_dic['EM']
-
-        else:
-            search_area = search_area_dic[search_area]
-            sub_search_area = ''
-        category = ws.cell(row=ws_row_number, column=col_names_number['Category']).value
-        category = categoria_dic[category]
-        keywords = ws.cell(row=ws_row_number, column=col_names_number['Keywords']).value
-        keywords = '+'.join([x.strip().lower() for x in keywords.split(' ')])
-        print()
-        min_price = ws.cell(row=ws_row_number, column=col_names_number['MinPrice']).value or None
-        max_price = ws.cell(row=ws_row_number, column=col_names_number['MaxPrice']).value or None
-        only_in_title = True if ws.cell(row=ws_row_number, column=col_names_number['Only in Title']).value else False
-        only_can_post = True if ws.cell(row=ws_row_number, column=col_names_number['Only Can Post']).value else False
-        search_url = url_root + search_area + '/vendita/' + category + sub_search_area + '/?q=' + keywords + '&ps=' + str(
-            min_price) + '&pe=' + str(max_price)
-        ws.cell(row=ws_row_number, column=col_names_number['URL Search']).value = search_url
-        wb.save(filename=global_excel_db)
-
-        #after adding url, searches for query
-        query_name = ws.cell(row=ws_row_number, column=col_names_number['Search Name']).value
-        run_query(url=search_url, name=query_name, notify=True)
-
-    # Create a dictionary of column names
-    col_names_number = extract_column_names_and_numbers_to_dict(worksheet=ws)
-    url_row_number = col_names_number['URL Search']
-    ##find columns that have no url
-    for ws_row_number in range(1, ws.max_row + 1):
-        if not ws.cell(row=ws_row_number, column=url_row_number).value:
-            fill_search_url_in_excel_db()
+# def check_and_fill_empty_url_in_excel_db():
+#     global col_names_number, ws_row_number
+#
+#     def fill_search_url_in_excel_db():
+#         global min_price, max_price
+#         # example1='https://www.subito.it/annunci-italia/vendita/arredamento-casalinghi/?q=herman+miller&order=priceasc&ps=100&pe=350'
+#         search_url = generate_search_url()
+#         ws.cell(row=ws_row_number, column=col_names_number['URL Search']).value = search_url
+#         wb.save(filename=global_excel_db)
+#
+#         #after adding url, searches for query
+#         query_name = ws.cell(row=ws_row_number, column=col_names_number['Search Name']).value
+#         run_query(url=search_url, name=query_name, notify=True)
+#
+#     def generate_search_url():
+#         global min_price, max_price, search_area_dic, categoria_dic
+#         url_root = 'https://www.subito.it/annunci-'
+#         search_area = ws.cell(row=ws_row_number, column=col_names_number['SearchArea']).value
+#         ##because provinces need region area and province sub areas in URL
+#         if search_area in ['RE', 'MO', 'PR']:
+#             sub_search_area = search_area_dic[search_area]
+#             search_area = search_area_dic['EM']
+#
+#         else:
+#             search_area = search_area_dic[search_area]
+#             sub_search_area = ''
+#         category = ws.cell(row=ws_row_number, column=col_names_number['Category']).value
+#         category = categoria_dic[category]
+#         keywords = ws.cell(row=ws_row_number, column=col_names_number['Keywords']).value
+#         keywords = '+'.join([x.strip().lower() for x in keywords.split(' ')])
+#         print()
+#         min_price = ws.cell(row=ws_row_number, column=col_names_number['MinPrice']).value or None
+#         max_price = ws.cell(row=ws_row_number, column=col_names_number['MaxPrice']).value or None
+#         only_in_title = True if ws.cell(row=ws_row_number, column=col_names_number['Only in Title']).value else False
+#         only_can_post = True if ws.cell(row=ws_row_number, column=col_names_number['Only Can Post']).value else False
+#         search_url = url_root + search_area + '/vendita/' + category + sub_search_area + '/?q=' + keywords + '&ps=' + str(
+#             min_price) + '&pe=' + str(max_price)
+#         return search_url
+#
+#     # Create a dictionary of column names
+#     col_names_number = extract_column_names_and_numbers_to_dict(worksheet=ws)
+#     url_row_number = col_names_number['URL Search']
+#     ##find columns that have no url
+#     for ws_row_number in range(1, ws.max_row + 1):
+#         if not ws.cell(row=ws_row_number, column=url_row_number).value:
+#             fill_search_url_in_excel_db()
 
 
 def parser_set_up():
@@ -220,7 +235,7 @@ def save_results_to_excel_db(name, url, link, title, price, location):
     return is_new_result
 
 
-def run_query(url, name, notify):
+def run_query(url, name, notify, keywords_exclude):
     print("running query (\"{}\" - {})...".format(name, url))
     global queries
     page = requests.get(url)
@@ -245,43 +260,67 @@ def run_query(url, name, notify):
         link = product.parent.parent.parent.parent.get('href')
 
         location = product.find('span', re.compile(r'town')).string + product.find('span', re.compile(r'city')).string
-
-        # if not queries.get(name):  # insert the new search
-        #     queries[name] = {url: {link: {'title': title, 'price': price, 'location': location}}}
-        #     print("\nNew search added:", name)
-        #     print("Adding result:", title, "-", price, "-", location)
-        # else:  # add search results to dictionary
-        #     if not queries.get(name).get(url).get(link):  # found a new element
-        #         tmp = "New element found for " + name + ": " + title + " @ " + price + " - " + location + " --> " + link + '\n'
-        #         msg.append(tmp)
-        #         queries[name][url][link] = {'title': title, 'price': price, 'location': location}
-
-        is_new_result = save_results_to_excel_db(name, url, link, title, price, location)
-        # tmp = "New element found for " + name + ": " + title + " @ " + price + " - " + location + " --> " + link + '\n'
-        if is_new_result:
-            msg.append("New element found for " + name + ": " + title + " @ " + price + " - " + location + " --> " + link + '\n')
+        
+        exclude_from_search = False
+        if keywords_exclude: 
+            for k in keywords_exclude:
+                if k in title:
+                    exclude_from_search=True
+        if not exclude_from_search:
+            is_new_result = save_results_to_excel_db(name, url, link, title, price, location)
+            # tmp = "New element found for " + name + ": " + title + " @ " + price + " - " + location + " --> " + link + '\n'
+            if is_new_result:
+                msg.append("New element found for " + name + ": " + title + " @ " + price + " - " + location + " --> " + link + '\n')
 
     if len(msg) > 0:
         if notify:
-            # # Windows only: send notification
-            # if not args.win_notifyoff and platform.system() == "Windows":
-            #     global toaster
-            #     toaster.show_toast("New announcements", "Query: " + name)
             if is_telegram_active():
                 send_telegram_messages(msg)
             print("\n".join(msg))
             print('\n{} new elements have been found.'.format(len(msg)))
-        # save_queries()
     else:
         print('All lists are already up to date.\n')
-    # print("queries file saved: ", queries)
 
+def generate_search_url(search_area, category, keywords, min_price, max_price, only_in_title=None, only_can_post=None):
+        global search_area_dic, categoria_dic
+        url_root = 'https://www.subito.it/annunci-'
+        ##because provinces need region area and province sub areas in URL
+        if search_area in ['RE', 'MO', 'PR']:
+            sub_search_area = search_area_dic[search_area]
+            search_area = search_area_dic['EM']
+
+        else:
+            search_area = search_area_dic[search_area.lower()]
+            sub_search_area = ''
+        category = categoria_dic[category]
+        keywords = '+'.join([x.strip().lower() for x in keywords.split(' ')])
+        min_price = min_price or None
+        max_price = max_price or None
+        only_in_title = '&qso=true' if only_in_title else 'False'
+        only_can_post = '&shp=true' if only_can_post else ''
+        search_url = url_root + search_area + '/vendita/' + category + sub_search_area + '/?q=' + keywords + only_can_post + '&ps=' + str(
+            min_price) + '&pe=' + str(max_price)
+        return search_url
 
 def refresh_search(notify=False):
     global db_dict
     try:
         for search in db_dict.values():
-            run_query(url=search['URL Search'], name=search['Search Name'], notify=notify)
+            category = [x.strip() for x in search['Category'].split(',')]
+            for cat in category:
+                areas = [x.strip().lower() for x in search['SearchArea'].split(' ')]
+                for area in areas:
+                    area = area.upper()
+                    search_url = generate_search_url(area, cat, search['Keywords'],
+                                                     search['MinPrice'], search['MaxPrice'],
+                                                     search['Only in Title'], search['Only Can Post'])
+                    search_name = search['Search Name']
+                    if search['KeywordsExclude']:
+                        keywords_exclude = [x.strip().lower() for x in search['KeywordsExclude'].split(' ')]
+                    else:
+                        keywords_exclude=None
+                    run_query(keywords_exclude = keywords_exclude, url=search_url, name=search_name, notify=notify)
+
     except requests.exceptions.ConnectionError:
         print("***Connection error***")
     except requests.exceptions.Timeout:
@@ -325,7 +364,7 @@ if __name__ == '__main__':
     wb = load_workbook(filename=global_excel_db)
     ws = wb["Searches"]
 
-    check_and_fill_empty_url_in_excel_db()
+    # check_and_fill_empty_url_in_excel_db()
 
     db_dict = data_from_db_to_dict(ws)
 
@@ -334,7 +373,8 @@ if __name__ == '__main__':
     # queries = dict()
     queries = db_dict
 
-    # dbFile = "searches.tracked"
+    refresh_search(True)
+
 
     # telegramApiFile = "telegram_api_credentials"
     # apiCredentials = dict()
